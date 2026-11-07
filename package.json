@@ -1,0 +1,44 @@
+{
+    "name": "md-to-bbcode",
+    "displayName": "Markdown to BBCode",
+    "description": "将选中的 Markdown 文本转换为 Steam BBCode 格式",
+    "version": "0.0.1",
+    "publisher": "",
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "mdToBbcode.convert",
+                "title": "Markdown 转 BBCode",
+                "category": "MD2BBCode"
+            },
+            {
+                "command": "mdToBbcode.bbCodeToJsonLiteral",
+                "title": "BBCode 内容转换并复制为 JSON 字面量",
+                "category": "MD2BBCode"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "mdToBbcode.convert",
+                "key": "ctrl+alt+b",
+                "mac": "cmd+alt+b",
+                "when": "editorTextFocus && editorHasSelection"
+            }
+        ]
+    },
+    "activationEvents": [],
+    "main": "extension.js",
+    "scripts": {
+        "build": "node scripts/build-vsix.js"
+    },
+    "keywords": ["markdown", "bbcode", "steam", "vscode"],
+    "author": "k-r-o-s",
+    "license": "ISC",
+    "type": "commonjs"
+}
