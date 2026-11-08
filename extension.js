@@ -74,12 +74,12 @@ function mdToBbcode(md) {
  * 直接用 JSON.stringify，它输出的就是合法的 JSON 字符串常量
  */
 function toJsonStringLiteral(text) {
-  const normalized = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-  return JSON.stringify(normalized);
+    const normalized = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    return JSON.stringify(normalized);
 }
 
 function activate(context) {
-    const disposable = vscode.commands.registerCommand('mdToBbcode.convert', async () => {
+    const cmdConvert = vscode.commands.registerCommand('mdToBbcode.convert', async () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             vscode.window.showWarningMessage('没有打开的编辑器。');
@@ -106,9 +106,9 @@ function activate(context) {
         }
     });
 
-    context.subscriptions.push(disposable);
+    context.subscriptions.push(cmdConvert);
 
-    const disposable2 = vscode.commands.registerCommand('mdToBbcode.bbCodeToJsonLiteral', async () => {
+    const cmdCopyLiteral = vscode.commands.registerCommand('mdToBbcode.bbCodeToJsonLiteral', async () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) return;
         const text = editor.document.getText(editor.selection);
@@ -120,7 +120,14 @@ function activate(context) {
         await vscode.env.clipboard.writeText(literal);
         vscode.window.setStatusBarMessage('已复制 JSON 字符串字面量', 3000);
     });
-    context.subscriptions.push(disposable2);
+    context.subscriptions.push(cmdCopyLiteral);
+
+    const cmdHelp = vscode.commands.registerCommand('mdToBbcode.help', async () => {
+        vscode.env.openExternal(
+            vscode.Uri.parse('https://steamcommunity.com/comment/Recommendation/formattinghelp')
+        );
+    });
+    context.subscriptions.push(cmdHelp);
 }
 
 function deactivate() { }

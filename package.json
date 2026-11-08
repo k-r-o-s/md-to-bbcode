@@ -17,6 +17,11 @@
     "contributes": {
         "commands": [
             {
+                "command": "mdToBbcode.help",
+                "title": "查看 steam 的 BBCode 语法帮助",
+                "category": "MD2BBCode"
+            },
+            {
                 "command": "mdToBbcode.convert",
                 "title": "Markdown 转 BBCode",
                 "category": "MD2BBCode"
@@ -27,14 +32,7 @@
                 "category": "MD2BBCode"
             }
         ],
-        "keybindings": [
-            {
-                "command": "mdToBbcode.convert",
-                "key": "ctrl+alt+b",
-                "mac": "cmd+alt+b",
-                "when": "editorTextFocus && editorHasSelection"
-            }
-        ]
+        "keybindings": []
     },
     "activationEvents": [],
     "main": "extension.js",

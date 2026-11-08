@@ -6,6 +6,7 @@
 
 - **Markdown → BBCode**：选中 Markdown 文本，运行命令或按快捷键，选区内容就地替换为 BBCode。
 - **复制为 JSON 字面量**：转换结果自动转义（换行转 `\n`、转义 `\` 和 `"`），复制到剪贴板，可直接粘进 `"description": ...` 的位置。
+- **BBCode 语法速查**: 快速查看 steam 官网 BBCode 的语法说明页面
 - **跨平台**：转换逻辑纯 JavaScript 实现，不依赖外部工具。
 
 ## 支持的格式
@@ -30,6 +31,7 @@
 3. 运行命令面板（`Ctrl+Shift+P` / `Cmd+Shift+P`），执行以下任一命令：
    - **`MD2BBCode: Markdown 转 BBCode`**：选区就地替换为 BBCode。
    - **`MD2BBCode: BBCode 内容转换并复制为 JSON 字面量`**：选中的 BBCode 内容转换为 string 字面量并结果复制到剪贴板
+   - **`MD2BBCode: 查看 steam 的 BBCode 语法帮助`**：查看 steam 官网 BBCode 的语法说明页面
 
 ## 使用示例
 
